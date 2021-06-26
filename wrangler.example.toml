@@ -1,0 +1,25 @@
+name = "cloudflare-ga-dev"
+type = "webpack"
+account_id = "__PLACEHOLDER__"
+routes = []
+zone_id = "__PLACEHOLDER__"
+usage_model = ""
+workers_dev = true
+target_type = "webpack"
+webpack_config = "./workers-site/webpack.config.js"
+
+kv_namespaces = [
+  { binding = "WORKERS_KV_LINKS", id = "__PLACEHOLDER__" }
+]
+
+
+[env.production]
+name = "cloudflare-ga"
+vars = { ENVIRONMENT = "production" }
+routes = [
+  "example.com/*",
+]
+
+kv_namespaces = [
+  { binding = "WORKERS_KV_LINKS", id = "__PLACEHOLDER__" }
+]

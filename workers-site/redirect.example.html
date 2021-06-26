@@ -1,0 +1,20 @@
+<head>
+    ${title}
+    ${metadata}
+    <meta http-equiv="last-modified" content="${cachedAt}" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_KEY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'GA_KEY');
+        setTimeout(() => window.location.href = '${requestURL}', 300)
+    </script>
+</head>
+
+<body>
+    <small>重新導向至 <a href="${requestURL}">${requestURL}</a></small>
+</body>
